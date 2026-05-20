@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MidnightCaps.Mx – Gorras Premium</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAVEGACIÓN ── -->
+  <nav>
+    <a href="#" class="nav-logo">MC<span>.MX</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#tienda">Tienda</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="cart-btn" onclick="toggleCart()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        Carrito
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="stars"></div>
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">León, Guanajuato · Streetwear Premium</p>
+      <h1 class="hero-title">MIDNIGHT<br>CAPS</h1>
+      <p class="hero-sub">.MX</p>
+      <p class="hero-desc">
+        Gorras premium con tendencias importadas.
+        Estilo que no duerme, calidad que habla por sí sola.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#tienda"   class="btn-primary">Ver Colección</a>
+        <a href="#nosotros" class="btn-outline">Nuestra Historia</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item"><span>✦</span>Gorras Premium</span>
+      <span class="marquee-item"><span>✦</span>Tendencias Importadas</span>
+      <span class="marquee-item"><span>✦</span>Envíos a Todo México</span>
+      <span class="marquee-item"><span>✦</span>Streetwear León Gto</span>
+      <span class="marquee-item"><span>✦</span>Stock Limitado</span>
+      <span class="marquee-item"><span>✦</span>Calidad Sin Igual</span>
+      <!-- duplicado para loop continuo -->
+      <span class="marquee-item"><span>✦</span>Gorras Premium</span>
+      <span class="marquee-item"><span>✦</span>Tendencias Importadas</span>
+      <span class="marquee-item"><span>✦</span>Envíos a Todo México</span>
+      <span class="marquee-item"><span>✦</span>Streetwear León Gto</span>
+      <span class="marquee-item"><span>✦</span>Stock Limitado</span>
+      <span class="marquee-item"><span>✦</span>Calidad Sin Igual</span>
+    </div>
+  </div>
+
+  <!-- ── TIENDA ── -->
+  <section class="shop-section" id="tienda">
+    <div class="shop-header">
+      <div>
+        <p class="section-label">Colección Actual</p>
+        <h2 class="section-title">LA TIENDA</h2>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active"  onclick="filterProducts('all',      this)">Todo</button>
+        <button class="filter-tab"         onclick="filterProducts('snapback',  this)">Snapback</button>
+        <button class="filter-tab"         onclick="filterProducts('fitted',    this)">Fitted</button>
+        <button class="filter-tab"         onclick="filterProducts('dad',       this)">Dad Hat</button>
+      </div>
+    </div>
+
+    <!-- Banner DB -->
+    <div class="db-banner">
+      <div class="db-banner-icon">⚡</div>
+      <div class="db-banner-text">
+        <h4>Base de Datos Conectada</h4>
+        <p>
+          Los productos y el stock se sincronizan con tu base de datos.
+          Revisa <strong style="color:#c8c8c8">README_DB.md</strong> para la guía de integración con Supabase.
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid generado por app.js -->
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ── QUIÉNES SOMOS ── -->
+  <section class="about-section" id="nosotros">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">Quiénes Somos</p>
+        <h2 class="section-title">NUESTRA<br>HISTORIA</h2>
+        <p>
+          Detrás de MidnightCaps.Mx hay una historia de <strong>evolución constante</strong>.
+          Soy un joven de 22 años originario de León, Guanajuato, impulsado por el firme objetivo
+          de crecer tanto en lo personal como en el mundo de los negocios.
+        </p>
+        <p>
+          Para mí, este proyecto <strong>no es solo vender</strong>; es el reflejo de disciplina,
+          superación y el deseo de <strong>construir algo grande</strong> desde mi ciudad natal.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">22</div>
+            <div class="stat-label">Años</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">León</div>
+            <div class="stat-label">Guanajuato</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-badge">
+          <div class="about-badge-num">MC</div>
+          <div class="about-badge-text">Midnight<br>Caps .MX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contacto">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">MIDNIGHTCAPS</div>
+        <p class="footer-tagline">
+          Gorras premium con tendencias importadas.
+          Envíos a todo México desde León, Guanajuato.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#tienda">Snapback</a></li>
+          <li><a href="#tienda">Fitted</a></li>
+          <li><a href="#tienda">Dad Hat</a></li>
+          <li><a href="#tienda">Nuevos Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Política de Envíos</a></li>
+          <li><a href="#">Devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MidnightCaps.Mx — Todos los derechos reservados</p>
+      <a href="#" class="footer-mx">León, Guanajuato · México</a>
+    </div>
+  </footer>
+
+  <!-- ── CARRITO: OVERLAY + DRAWER ── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <span class="cart-title">CARRITO</span>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🧢</div>
+        <span>Tu carrito está vacío</span>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-price" id="cartTotal">$0</span>
+      </div>
+      <button class="btn-checkout"
+        onclick="alert('¡Próximamente! Conecta tu pasarela de pago aquí.')">
+        Proceder al Pago →
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+
+</body>
+</html>
